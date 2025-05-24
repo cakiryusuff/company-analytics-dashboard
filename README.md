@@ -3,7 +3,7 @@
 A Flask-based __interactive__ dashboard to analyze and visualize business data using PostgreSQL and Plotly. Ideal for __companies__ seeking insights into their sales, product lines, payments, and trends.
 
 ![](readme_images/screen1.png)
-![](readme_images/screen2.png)
+![](readme_images/screen3.png)
 
 ---
 
