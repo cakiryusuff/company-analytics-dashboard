@@ -106,20 +106,82 @@ def treemap_chart(datas):
     return pio.to_html(fig, full_html=False, include_plotlyjs=False)
 
 
-def sales_table(data):
+# def sales_table(data):
     
+#     df = pd.DataFrame(data, columns=['tarih', 'vergi', 'maliyet', 'satış'])
+
+#     df['vergi'] = df['vergi'].astype(float)
+#     df['maliyet'] = df['maliyet'].astype(float)
+#     df['satış'] = df['satış'].astype(float)
+
+#     fig = go.Figure(data=[go.Table(
+#         header=dict(values=list(df.columns), align='left'),
+#         cells=dict(values=[df[col] for col in df.columns], align='left')
+#     )])
+#     fig.update_layout(height=300, width=500, margin=dict(t=30, b=30, l=30, r=30), title="Aylık Ürün Satışları")
+#     return pio.to_html(fig, full_html=False, include_plotlyjs=False)
+
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.io as pio
+
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.io as pio
+
+def sales_table(data):
     df = pd.DataFrame(data, columns=['tarih', 'vergi', 'maliyet', 'satış'])
 
     df['vergi'] = df['vergi'].astype(float)
     df['maliyet'] = df['maliyet'].astype(float)
     df['satış'] = df['satış'].astype(float)
 
+    tarih_list = df['tarih'].tolist() + ['Toplam']
+    vergi_list = df['vergi'].tolist() + [round(df['vergi'].sum(), 2)]
+    maliyet_list = df['maliyet'].tolist() + [round(df['maliyet'].sum(), 2)]
+    satis_list = df['satış'].tolist() + [round(df['satış'].sum(), 2)]
+
+    fonts = {
+        'family': ['Arial', 'Arial', 'Arial', 'Impact'],
+        'size': [12, 12, 12, 14],
+        'color': ['black', 'black', 'black', 'black']
+    }
+
+    total_row_color = ['white'] * len(df) + ['lightgray']  # son satır açık gri
+
     fig = go.Figure(data=[go.Table(
-        header=dict(values=list(df.columns), fill_color='paleturquoise', align='left'),
-        cells=dict(values=[df[col] for col in df.columns], fill_color='lavender', align='left')
+        header=dict(
+            values=['tarih', 'vergi', 'maliyet', 'satış'],
+            align='left',
+            # fill_color='white',
+            # line_color='black',
+            # line_width=1
+        ),
+        cells=dict(
+            values=[tarih_list, vergi_list, maliyet_list, satis_list],
+            align='left',
+            fill_color=[total_row_color] * 4,  # her kolon için aynı satır rengi listesi
+            # line_color='black',
+            # line_width=1,
+            font=dict(
+                family=fonts['family'],
+                size=fonts['size'],
+                color=fonts['color']
+            )
+        )
     )])
-    fig.update_layout(height=300, width=500, margin=dict(t=30, b=30, l=30, r=30), title="Aylık Ürün Satışları", font_family="Impact")
+
+    fig.update_layout(
+        height=350,
+        width=500,
+        margin=dict(t=30, b=30, l=30, r=30),
+        title="Aylık Ürün Satışları",
+        paper_bgcolor='white',
+        plot_bgcolor='white'
+    )
+
     return pio.to_html(fig, full_html=False, include_plotlyjs=False)
+
 
 def dataset_view(datas):
     df = pd.DataFrame(datas.fetchall(), columns=list(datas.keys()))

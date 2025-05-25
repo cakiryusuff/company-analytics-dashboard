@@ -1,9 +1,35 @@
-# 📊 Business Intelligence Data Dashboard
+# 📊 İş Zekâsı Veri Panosu
 
-A Flask-based __interactive__ dashboard to analyze and visualize business data using PostgreSQL and Plotly. Ideal for __companies__ seeking insights into their sales, product lines, payments, and trends.
+PostgreSQL ve Plotly kullanarak iş verilerini analiz etmek ve görselleştirmek için geliştirilen __etkileşimli__ bir Flask tabanlı pano. Satış, ürün kategorileri, ödemeler ve eğilimler hakkında içgörüler edinmek isteyen __şirketler__ için idealdir.
 
 ![](readme_images/screen1.png)
 ![](readme_images/screen3.png)
+
+## Özel Panolar & Makine Öğrenimi Hizmetleri
+
+Verilerinden içgörüler elde etmek isteyen __şirketler__ ve __bireyler__ için özelleştirilmiş pano çözümleri sunuyorum.
+
+Satış, operasyonlar veya müşteri davranışları gibi konularda __görsel analizler__ arıyorsanız, iş ihtiyaçlarınıza özel panolar geliştirebilirim.
+
+Ayrıca, verilerinize __makine öğrenimi__ teknikleri uygulayarak __tahminleme__, __sınıflandırma__, __kümeleme__ gibi analizlerle daha derin ve uygulanabilir içgörüler elde etmenize yardımcı olabilirim.
+
+📬 Şirketiniz için özel bir veri çözümü oluşturmak isterseniz, benimle iletişime geçmekten çekinmeyin.
+
+---
+
+## 🛠️ Kullanılan Teknolojiler
+
+- **Flask** – Web sunucusu ve şablonlama
+- **SQLAlchemy** – PostgreSQL için ORM
+- **Plotly** – Etkileşimli grafikler (çizgi, ağaç haritası, pasta, mum grafiği)
+- **Pandas** – Veri işleme
+- **PostgreSQL** – İlişkisel veritabanı
+
+-------------------------------------------------------------------------
+
+# 📊 Business Intelligence Data Dashboard
+
+A Flask-based __interactive__ dashboard to analyze and visualize business data using PostgreSQL and Plotly. Ideal for __companies__ seeking insights into their sales, product lines, payments, and trends.
 
 ---
 
@@ -17,7 +43,6 @@ Additionally, I can apply __machine learning techniques__ to your data for __for
 
 📬 Feel free to reach out if you're interested in building a custom data solution for your organization.
 
-
 ---
 
 ## 🛠️ Technologies
@@ -27,12 +52,3 @@ Additionally, I can apply __machine learning techniques__ to your data for __for
 - **Plotly** – Interactive graphs (line, treemap, pie, candlestick)
 - **Pandas** – Data wrangling
 - **PostgreSQL** – Relational database
-
----
-
-## 📦 Installation
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/yourusername/business-data-dashboard.git
-cd business-data-dashboard

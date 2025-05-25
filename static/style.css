@@ -5,6 +5,11 @@ body {
   padding: 10px;
 }
 
+.group {
+    display: flex;
+  gap: 10px; /* Eleman 1 ve 2 arasındaki boşluk */
+}
+
 .header {
   display: flex;
   align-items: center;
