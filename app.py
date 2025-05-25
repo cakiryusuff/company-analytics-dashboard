@@ -18,14 +18,12 @@ db = SQLAlchemy(app)
 def dashboard():
     current_minute = datetime.now().strftime("%Y-%m-%d %H:%M")
     
-    # Verileri al
     product_line_data = get_product_line_data(db)
     quantity_sales_data = get_quantity_sales_data(db)
     payment_data = get_payment_data(db)
     sales_data = get_sales_data(db)
     table_data = get_table_data(db)
     
-    # Görselleri oluştur
     summary_cards = [
         create_summary_card("Genel Toplam", f"{general_total(db)} TL"),
         create_summary_card("Toplam Adet Satış", f"{general_product_sale(db)} Adet"),
